@@ -1,0 +1,36 @@
+.header__favorites {
+	position: relative;
+
+	.header__fav-btn {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		text-decoration: none;
+		font-size: 1.5rem;
+		color: var(--text-yellow);
+		background: none;
+		border: none;
+		cursor: pointer;
+
+		.header__fav-star {
+			/* display: none; */
+			margin-right: 0.5rem;
+			color: var(--text-yellow);
+			cursor: pointer;
+		}
+	}
+
+	.header__count-icon {
+		position: absolute;
+		right: -9px;
+		top: -10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 8px 4px;
+		min-width: 13px;
+		height: 14px;
+		background-color: var(--accent-red);
+		border-radius: 40%;
+	}
+}
