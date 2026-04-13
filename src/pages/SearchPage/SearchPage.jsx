@@ -1,7 +1,7 @@
 import './searchPage.css';
 
 const SearchPage = () => {
-    return <div>SearchPage</div>;
+    return <section className="page"></section>;
 };
 
 export default SearchPage;

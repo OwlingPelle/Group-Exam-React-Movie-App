@@ -25,7 +25,7 @@ function App() {
                     element: <MoviePage />,
                 },
                 {
-                    path: 'search',
+                    path: 'search/:query',
                     element: <SearchPage />,
                 },
             ],
