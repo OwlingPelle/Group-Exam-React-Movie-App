@@ -1,8 +1,7 @@
-import React from 'react';
-import Header from '../../components/Header/Header';
+import './landingPage.css';
 
 const LandingPage = () => {
-	return <Header />;
+	return <div>LandingPage</div>;
 };
 
 export default LandingPage;
