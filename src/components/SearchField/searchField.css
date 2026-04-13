@@ -1,0 +1,28 @@
+.header__form {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.header__input {
+	border: none;
+	outline: none;
+	background: none;
+	width: 50%;
+	padding: 1rem;
+	border-radius: 2rem 0 0 2rem;
+	background-color: var(--primary-white);
+}
+
+.header__form-btn {
+	background-color: var(--primary-white);
+	border-radius: 0 2rem 2rem 0;
+	width: 5rem;
+	border: none;
+	cursor: pointer;
+
+	.fa-magnifying-glass {
+		font-size: 1.3rem;
+		background-color: var(--primary-white);
+	}
+}
