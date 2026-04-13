@@ -7,30 +7,30 @@ import SearchPage from './pages/SearchPage/SearchPage';
 import MoviePage from './pages/MoviePage/MoviePage';
 
 function App() {
-	const router = createBrowserRouter([
-		{
-			path: '/',
-			element: <Layout />,
-			children: [
-				{
-					index: true,
-					element: <LandingPage />,
-				},
-				{
-					path: 'favorites',
-					element: <FavoritesPage />,
-				},
-				{
-					path: 'movie/:id', // Använd useRef() för att hämta filmen från dess ID
-					element: <MoviePage />,
-				},
-				{
-					path: 'search',
-					element: <SearchPage />,
-				},
-			],
-		},
-	]);
+    const router = createBrowserRouter([
+        {
+            path: '/',
+            element: <Layout />,
+            children: [
+                {
+                    index: true,
+                    element: <LandingPage />,
+                },
+                {
+                    path: 'favorites',
+                    element: <FavoritesPage />,
+                },
+                {
+                    path: 'movie/:id', // Använd useRef() för att hämta filmen från dess ID
+                    element: <MoviePage />,
+                },
+                {
+                    path: 'search/:query',
+                    element: <SearchPage />,
+                },
+            ],
+        },
+    ]);
 
 	return (
 		<div className='app'>
