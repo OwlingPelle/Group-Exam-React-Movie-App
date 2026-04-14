@@ -1,0 +1,17 @@
+.page {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem 1.5rem 2rem 1.5rem;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(5, 1fr);
+	justify-items: center;
+}
+
+.page-title {
+	font-family: 'Inter', sans-serif;
+	font-weight: 500;
+	font-style: italic;
+	color: var(--text-yellow);
+	padding: 2rem 1.5rem 0 1.5rem;
+}
