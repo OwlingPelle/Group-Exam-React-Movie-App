@@ -1,33 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	scrollbar-gutter: auto;
-	font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scrollbar-gutter: auto;
+    font-family: 'Inter', sans-serif;
 }
 
 :root {
-	--primary-bg: #0d2831;
-	--primary-white: #ffffff;
-	--text-yellow: #fdc700;
-	--accent-red: #e70000;
-	--text-black: #000000;
-	--line-primary: #055539;
-	background-color: var(--primary-bg);
+    --primary-bg: #0d2831;
+    --primary-white: #ffffff;
+    --text-yellow: #fdc700;
+    --accent-red: #e70000;
+    --text-black: #000000;
+    --line-primary: #055539;
+    background-color: var(--primary-bg);
 }
 
 .d-none {
-	display: none !important;
+    display: none !important;
 }
 
-.app {
-	background-color: var(--primary-bg);
-	max-width: 1200px;
-	/* max-width: 100%; */
-	margin: 0 auto;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .page__title {
+        font-weight: 500;
+        font-style: italic;
+        color: var(--text-yellow);
+        padding: 2rem 1.5rem 0 0;
+    }
+}
+
+a {
+    text-decoration: none;
 }
