@@ -8,10 +8,11 @@ const SearchForm = () => {
 
     const handleSearch = (e) => {
         e.preventDefault();
-        console.log(input);
-        navigate(`/search/${input}`);
-        setInput('');
-        inputRef.current.blur();
+        if (input) {
+            navigate(`/search/${input}`);
+            setInput('');
+            inputRef.current.blur();
+        }
     };
 
     return (
