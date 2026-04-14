@@ -5,6 +5,8 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import SearchPage from './pages/SearchPage/SearchPage';
 import MoviePage from './pages/MoviePage/MoviePage';
+import '@mantine/core';
+import { MantineProvider } from '@mantine/core';
 
 function App() {
     const router = createBrowserRouter([
@@ -32,11 +34,13 @@ function App() {
         },
     ]);
 
-	return (
-		<div className='app'>
-			<RouterProvider router={router} />
-		</div>
-	);
+    return (
+        <div className="app">
+            <MantineProvider>
+                <RouterProvider router={router} />
+            </MantineProvider>
+        </div>
+    );
 }
 
 export default App;

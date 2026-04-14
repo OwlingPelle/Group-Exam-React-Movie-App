@@ -1,0 +1,38 @@
+.carousel-wrapper {
+    border-radius: 5px;
+    overflow: hidden;
+
+    .trailer-frame {
+        border: none;
+        border-radius: 5px;
+        height: 500px;
+        width: 100%;
+    }
+
+    .mantine-Carousel-control {
+        background-color: var(--text-yellow);
+        border: none;
+        opacity: 0.6;
+        color: var(--text-black);
+    }
+    .mantine-Carousel-control:hover {
+        background-color: var(--text-yellow);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1000px) {
+    .carousel-wrapper {
+        .trailer-frame {
+            height: 400px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-wrapper {
+        .trailer-frame {
+            height: 220px;
+        }
+    }
+}
