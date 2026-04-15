@@ -23,7 +23,7 @@ function App() {
                     element: <FavoritesPage />,
                 },
                 {
-                    path: 'movie/:id', // Använd useRef() för att hämta filmen från dess ID
+                    path: 'movie/:id', // Använd useParams() för att hämta filmen från dess ID
                     element: <MoviePage />,
                 },
                 {
