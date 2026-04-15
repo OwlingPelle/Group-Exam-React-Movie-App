@@ -6,6 +6,8 @@ import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import SearchPage from './pages/SearchPage/SearchPage';
 import MoviePage from './pages/MoviePage/MoviePage';
 import { useFavorites } from './hooks/useFavorites';
+import '@mantine/core';
+import { MantineProvider } from '@mantine/core';
 
 function App() {
 	const { favorites, addFavorites, removeFavorites } = useFavorites();
@@ -37,7 +39,9 @@ function App() {
 
 	return (
 		<div className='app'>
-			<RouterProvider router={router} />
+			<MantineProvider>
+				<RouterProvider router={router} />
+			</MantineProvider>
 		</div>
 	);
 }
