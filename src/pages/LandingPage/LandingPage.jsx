@@ -3,7 +3,7 @@ import { useFetchRecommended } from '../../hooks/useFetchRecommended';
 import { shuffleArray } from '../../utils/shuffleArray';
 import './landingPage.css';
 
-const LandingPage = () => {
+const LandingPage = ({ favorites, addFavorites, removeFavorites }) => {
 	// return <div>LandingPage</div>;
 
 	const { recommendedMovies, isLoading, isError } = useFetchRecommended();
@@ -19,7 +19,7 @@ const LandingPage = () => {
 			<section className='page'>
 				{/* <MovieCard movie={recommendedMovies[0]} /> */}
 				{shuffleArray(recommendedMovies).map((movie) => (
-					<MovieCard key={movie.imdbID} movie={movie} />
+					<MovieCard key={movie.imdbID} movie={movie} favorites={favorites} addFavorites={addFavorites} removeFavorites={removeFavorites} />
 				))}
 			</section>
 		</section>
