@@ -5,42 +5,45 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import SearchPage from './pages/SearchPage/SearchPage';
 import MoviePage from './pages/MoviePage/MoviePage';
+import { useFavorites } from './hooks/useFavorites';
 import '@mantine/core';
 import { MantineProvider } from '@mantine/core';
 
 function App() {
-    const router = createBrowserRouter([
-        {
-            path: '/',
-            element: <Layout />,
-            children: [
-                {
-                    index: true,
-                    element: <LandingPage />,
-                },
-                {
-                    path: 'favorites',
-                    element: <FavoritesPage />,
-                },
-                {
-                    path: 'movie/:id', // Använd useRef() för att hämta filmen från dess ID
-                    element: <MoviePage />,
-                },
-                {
-                    path: 'search/:query',
-                    element: <SearchPage />,
-                },
-            ],
-        },
-    ]);
+	const { favorites, addFavorites, removeFavorites } = useFavorites();
 
-    return (
-        <div className="app">
-            <MantineProvider>
-                <RouterProvider router={router} />
-            </MantineProvider>
-        </div>
-    );
+	const router = createBrowserRouter([
+		{
+			path: '/',
+			element: <Layout />,
+			children: [
+				{
+					index: true,
+					element: <LandingPage favorites={favorites} addFavorites={addFavorites} removeFavorites={removeFavorites} />,
+				},
+				{
+					path: 'favorites',
+					element: <FavoritesPage />,
+				},
+				{
+					path: 'movie/:id', // Använd useRef() för att hämta filmen från dess ID
+					element: <MoviePage />,
+				},
+				{
+					path: 'search/:query',
+					element: <SearchPage />,
+				},
+			],
+		},
+	]);
+
+	return (
+		<div className='app'>
+			<MantineProvider>
+				<RouterProvider router={router} />
+			</MantineProvider>
+		</div>
+	);
 }
 
 export default App;
