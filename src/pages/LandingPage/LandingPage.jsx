@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import MovieList from '../../components/MovieList/MovieList';
 import TrailerCarousel from '../../components/TrailerCarousel/TrailerCarousel';
@@ -5,9 +6,13 @@ import { useFetchRecommended } from '../../hooks/useFetchRecommended';
 import { shuffleArray } from '../../utils/shuffleArray';
 import './landingPage.css';
 
-const LandingPage = () => {
+const LandingPage = ({ favorites, addFavorites, removeFavorites }) => {
     const { recommendedMovies, isLoading, isError } = useFetchRecommended();
-    const shuffledMovies = shuffleArray(recommendedMovies);
+
+    // Genererad med hjälp av AI
+    const shuffledMovies = useMemo(() => {
+        return shuffleArray(recommendedMovies);
+    }, [recommendedMovies]);
 
     return (
         <section className="page">
@@ -21,7 +26,14 @@ const LandingPage = () => {
                       ? 'It shit itself...'
                       : 'Recommended Movies'}
             </h2>
-            {!isLoading && !isError && <MovieList movies={shuffledMovies} />}
+            {!isLoading && !isError && (
+                <MovieList
+                    movies={shuffledMovies}
+                    favorites={favorites}
+                    addFavorites={addFavorites}
+                    removeFavorites={removeFavorites}
+                />
+            )}
         </section>
     );
 };

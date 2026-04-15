@@ -1,0 +1,12 @@
+.details__list {
+    display: flex;
+    gap: 0.5rem;
+
+    .details__item {
+        background-color: var(--primary-light-bg);
+        padding: 0.25rem 0.75rem;
+        color: var(--primary-white);
+        border-radius: 1rem;
+        font-size: 0.75rem;
+    }
+}

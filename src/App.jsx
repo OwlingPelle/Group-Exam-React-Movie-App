@@ -5,10 +5,13 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import SearchPage from './pages/SearchPage/SearchPage';
 import MoviePage from './pages/MoviePage/MoviePage';
+import { useFavorites } from './hooks/useFavorites';
 import '@mantine/core';
 import { MantineProvider } from '@mantine/core';
 
 function App() {
+    const { favorites, addFavorites, removeFavorites } = useFavorites();
+
     const router = createBrowserRouter([
         {
             path: '/',
@@ -16,15 +19,33 @@ function App() {
             children: [
                 {
                     index: true,
-                    element: <LandingPage />,
+                    element: (
+                        <LandingPage
+                            favorites={favorites}
+                            addFavorites={addFavorites}
+                            removeFavorites={removeFavorites}
+                        />
+                    ),
                 },
                 {
                     path: 'favorites',
-                    element: <FavoritesPage />,
+                    element: (
+                        <FavoritesPage
+                            favorites={favorites}
+                            addFavorites={addFavorites}
+                            removeFavorites={removeFavorites}
+                        />
+                    ),
                 },
                 {
                     path: 'movie/:id', // Använd useParams() för att hämta filmen från dess ID
-                    element: <MoviePage />,
+                    element: (
+                        <MoviePage
+                            favorites={favorites}
+                            addFavorites={addFavorites}
+                            removeFavorites={removeFavorites}
+                        />
+                    ),
                 },
                 {
                     path: 'search/:query',

@@ -5,7 +5,7 @@ const Favorites = () => {
 	return (
 		<section className='header__favorites'>
 			<div className='header__fav-btn' id='favBtn'>
-				<i className='fa-solid fa-star header__fav-star'></i>
+				{/* <i className='fa-solid fa-star header__fav-star'></i> */}
 				<Link to='/favorites' className='header__fav-text'>
 					Favorites
 				</Link>
