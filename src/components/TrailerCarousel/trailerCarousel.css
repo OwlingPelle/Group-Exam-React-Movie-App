@@ -1,0 +1,71 @@
+.carousel-wrapper {
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+
+    .trailer-frame {
+        border: none;
+        border-radius: 5px;
+        height: 420px;
+        width: 100%;
+    }
+
+    .mantine-Carousel-control {
+        background-color: var(--text-yellow);
+        border: none;
+        opacity: 0.6;
+        color: var(--text-black);
+        z-index: 10;
+    }
+    .mantine-Carousel-control:hover {
+        background-color: var(--text-yellow);
+        opacity: 1;
+    }
+}
+
+@media (min-width: 780px) {
+    .carousel-wrapper::before,
+    .carousel-wrapper::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 25%;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .carousel-wrapper::before {
+        background: linear-gradient(
+            to right,
+            var(--primary-bg) 10%,
+            transparent
+        );
+        left: 0px;
+    }
+
+    .carousel-wrapper::after {
+        background: linear-gradient(
+            to left,
+            var(--primary-bg) 10%,
+            transparent
+        );
+        right: 0px;
+        z-index: 0;
+    }
+}
+
+@media (max-width: 1000px) {
+    .carousel-wrapper {
+        .trailer-frame {
+            height: 400px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-wrapper {
+        .trailer-frame {
+            height: 220px;
+        }
+    }
+}
