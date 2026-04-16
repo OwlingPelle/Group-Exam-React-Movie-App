@@ -9,11 +9,13 @@ const Favorites = ({ favorites }) => {
                     Favorites
                 </Link>
             </div>
-            <div className="header__count-icon" id="favCountContainer">
-                <p className="header__count-number" id="favCount">
-                    {favorites.length}
-                </p>
-            </div>
+            {favorites.length > 0 && (
+                <div className="header__count-icon" id="favCountContainer">
+                    <p className="header__count-number" id="favCount">
+                        {favorites.length}
+                    </p>
+                </div>
+            )}
         </section>
     );
 };
