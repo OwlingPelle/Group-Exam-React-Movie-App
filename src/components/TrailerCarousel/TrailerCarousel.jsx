@@ -1,7 +1,6 @@
 import './trailerCarousel.css';
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
-import { useEffect } from 'react';
 import { Carousel } from '@mantine/carousel';
 
 const TrailerCarousel = ({ movies }) => {
@@ -22,7 +21,11 @@ const TrailerCarousel = ({ movies }) => {
     return (
         <section className="carousel-wrapper">
             <Carousel
-                slideSize={{ base: '100%', sm: '80%', md: '70%' }}
+                className="trailer-carousel"
+                classNames={{
+                    slide: 'trailer-slide',
+                }}
+                slideSize={{ base: '100%', sm: '80%', md: '60%' }}
                 slideGap={{ base: 0, sm: 'xs', md: 'md' }}
                 controlSize={40}
                 controlsOffset="xs"

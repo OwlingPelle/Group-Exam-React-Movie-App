@@ -1,5 +1,6 @@
 .hero {
     aspect-ratio: 10 / 4;
+    /* height: 400px; */
     background-size: cover;
     background-position: top;
     display: flex;
@@ -43,4 +44,41 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, #0d283167 0%, #0d2831 100%);
+}
+
+@media (max-width: 800px) {
+    .hero {
+        .hero__content {
+            gap: 1rem;
+            .hero__title {
+                font-size: 2rem;
+                line-height: 2rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        aspect-ratio: 5 / 4;
+
+        .hero__content {
+            padding-bottom: 0rem;
+
+            .hero__info {
+                display: flex;
+                gap: 0.75rem;
+
+                p {
+                    font-size: 1rem;
+                    color: var(--text-light-gray);
+                }
+
+                .hero__rating {
+                    color: var(--text-yellow);
+                    font-weight: 600;
+                }
+            }
+        }
+    }
 }

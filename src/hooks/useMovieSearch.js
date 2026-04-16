@@ -17,7 +17,7 @@ export const useMovieSearch = (query) => {
         setIsError(false);
 
         axios
-            .get(`http://www.omdbapi.com/?apikey=b866157e&s=${query}`)
+            .get(`http://www.omdbapi.com/?apikey=e477c237&s=${query}`)
             .then((res) => setResults(res.data.Search || []))
             .catch(() => setIsError(true))
             .finally(() => setIsLoading(false));
