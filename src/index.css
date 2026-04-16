@@ -10,11 +10,14 @@
 
 :root {
     --primary-bg: #0d2831;
+    --primary-light-bg: #1a4451;
     --primary-white: #ffffff;
     --text-yellow: #fdc700;
-    --accent-red: #e70000;
+    --accent-red: #fb2c36;
     --text-black: #000000;
     --line-primary: #055539;
+    --text-light-gray: #d1d5dc;
+    --text-gray: #99a1af;
     background-color: var(--primary-bg);
 }
 
@@ -40,4 +43,8 @@
 
 a {
     text-decoration: none;
+}
+
+ul {
+    list-style: none;
 }

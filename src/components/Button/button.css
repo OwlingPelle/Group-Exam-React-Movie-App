@@ -1,0 +1,25 @@
+.btn {
+    padding: 14px;
+    border: 2px solid var(--text-yellow);
+    background-color: transparent;
+    color: var(--text-yellow);
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--text-yellow);
+    color: var(--primary-white);
+}
+
+.btn--red {
+    background-color: var(--accent-red);
+    border: 2px solid var(--accent-red);
+    color: var(--primary-white);
+}
+
+.btn--red:hover {
+    border: 2px solid #fd626a;
+    background-color: #fd626a;
+}
