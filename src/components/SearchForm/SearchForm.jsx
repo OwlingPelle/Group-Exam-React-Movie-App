@@ -26,6 +26,7 @@ const SearchForm = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 ref={inputRef}
+                placeholder="Search movie"
             />
             <button
                 className="header__form-btn"

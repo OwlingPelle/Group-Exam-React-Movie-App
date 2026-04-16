@@ -1,36 +1,36 @@
 .header__favorites {
-	position: relative;
+    position: relative;
 
-	.header__fav-btn {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		text-decoration: none;
-		font-size: 1.5rem;
-		color: var(--text-yellow);
-		background: none;
-		border: none;
-		cursor: pointer;
+    .header__fav-btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-style: italic;
+        color: var(--text-yellow);
+        background: none;
+        border: none;
+        cursor: pointer;
 
-		.header__fav-star {
-			/* display: none; */
-			margin-right: 0.5rem;
-			color: var(--text-yellow);
-			cursor: pointer;
-		}
-	}
+        .header__fav-text {
+            font-weight: 500;
+        }
+    }
 
-	.header__count-icon {
-		position: absolute;
-		right: -9px;
-		top: -10px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: 8px 4px;
-		min-width: 13px;
-		height: 14px;
-		background-color: var(--accent-red);
-		border-radius: 40%;
-	}
+    .header__count-icon {
+        position: absolute;
+        right: -9px;
+        top: -10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: var(--accent-red);
+        color: var(--primary-white);
+        font-size: 0.75rem;
+    }
 }

@@ -55,10 +55,6 @@
         box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
         z-index: 100;
 
-        .card__imdb-icon {
-            /* width: 2.2rem; */
-        }
-
         .card__imdb-rating {
             font-family: 'Oswald', sans-serif;
             color: var(--text-black);
@@ -86,20 +82,9 @@
         .card__year {
             font-family: 'Inter', sans-serif;
             position: relative;
-            font-size: 0.7rem;
-            font-weight: 200;
-            text-align: left;
-            color: var(--primary-white);
-        }
-
-        .card__youtube-icon {
-            width: 1.1rem;
-            transform: translateY(3px);
-        }
-        .card__trailer-btn,
-        a {
+            font-size: 0.75rem;
             font-weight: 400;
-            font-size: 0.7rem;
+            text-align: left;
             color: var(--primary-white);
         }
     }

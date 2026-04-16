@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import MovieCard from '../../components/MovieCard/MovieCard';
 import MovieList from '../../components/MovieList/MovieList';
 import TrailerCarousel from '../../components/TrailerCarousel/TrailerCarousel';
 import { useFetchRecommended } from '../../hooks/useFetchRecommended';
@@ -19,13 +18,13 @@ const LandingPage = ({ favorites, addFavorites, removeFavorites }) => {
             {!isLoading && !isError && (
                 <TrailerCarousel movies={shuffledMovies.slice(0, 5)} />
             )}
-            <h2 className="page__title">
+            <h1 className="page__title">
                 {isLoading
                     ? 'Loading...'
                     : isError
                       ? 'It shit itself...'
                       : 'Recommended Movies'}
-            </h2>
+            </h1>
             {!isLoading && !isError && (
                 <MovieList
                     movies={shuffledMovies}

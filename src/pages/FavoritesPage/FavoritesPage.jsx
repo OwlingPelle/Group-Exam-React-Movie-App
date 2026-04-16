@@ -4,11 +4,11 @@ import './favoritesPage.css';
 const FavoritesPage = ({ favorites, addFavorites, removeFavorites }) => {
     return (
         <section className="page">
-            <h2 className="page__title">
+            <h1 className="page__title">
                 {favorites.length > 0
                     ? `Favorites (${favorites.length})`
                     : 'Your favorites is empty'}
-            </h2>
+            </h1>
             <MovieList
                 movies={favorites}
                 favorites={favorites}

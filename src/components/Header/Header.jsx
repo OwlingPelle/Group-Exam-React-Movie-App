@@ -3,7 +3,7 @@ import Favorites from '../Favorites/Favorites.jsx';
 import './header.css';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ favorites }) => {
     return (
         <header className="header">
             <div className="header__flex">
@@ -11,7 +11,7 @@ const Header = () => {
                     Movies!
                 </Link>
                 <SearchForm />
-                <Favorites />
+                <Favorites favorites={favorites} />
             </div>
         </header>
     );

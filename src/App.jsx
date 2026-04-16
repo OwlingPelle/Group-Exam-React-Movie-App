@@ -15,7 +15,7 @@ function App() {
     const router = createBrowserRouter([
         {
             path: '/',
-            element: <Layout />,
+            element: <Layout favorites={favorites} />,
             children: [
                 {
                     index: true,
@@ -49,7 +49,13 @@ function App() {
                 },
                 {
                     path: 'search/:query',
-                    element: <SearchPage />,
+                    element: (
+                        <SearchPage
+                            favorites={favorites}
+                            addFavorites={addFavorites}
+                            removeFavorites={removeFavorites}
+                        />
+                    ),
                 },
             ],
         },

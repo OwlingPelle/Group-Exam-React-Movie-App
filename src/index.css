@@ -28,7 +28,7 @@
 .page {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1.5rem 2rem 1.5rem;
+    padding: 2rem 1.5rem 8rem 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -37,8 +37,14 @@
         font-weight: 500;
         font-style: italic;
         color: var(--text-yellow);
-        padding: 2rem 1.5rem 0 0;
     }
+}
+
+.page-msg {
+    font-size: 2rem;
+    color: var(--text-yellow);
+    text-align: center;
+    margin-top: 4rem;
 }
 
 a {

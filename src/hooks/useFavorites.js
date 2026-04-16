@@ -11,7 +11,6 @@ export const useFavorites = () => {
     }, [favorites]);
 
     const addFavorites = (movie) => {
-        console.log(movie);
         setFavorites((prev) => [...prev, movie]);
     };
 
@@ -20,5 +19,7 @@ export const useFavorites = () => {
         setFavorites(filtered);
     };
 
-    return { favorites, addFavorites, removeFavorites };
+    let qty = favorites.length;
+
+    return { favorites, addFavorites, removeFavorites, qty };
 };

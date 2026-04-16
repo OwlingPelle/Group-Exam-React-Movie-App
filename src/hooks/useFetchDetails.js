@@ -12,7 +12,7 @@ export const useFetchDetails = (id) => {
         setIsLoading(true);
 
         axios
-            .get(`http://www.omdbapi.com/?apikey=b866157e&plot=full&i=${id}`)
+            .get(`http://www.omdbapi.com/?apikey=e477c237&plot=full&i=${id}`)
             .then((res) => setMovieDetails(res.data))
             .catch(() => setIsError(true))
             .finally(() => setIsLoading(false));
