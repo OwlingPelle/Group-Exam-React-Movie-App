@@ -5,6 +5,7 @@ import './movieCard.css';
 import { useFavorites } from '../../hooks/useFavorites';
 import FavBtnFilled from '../FavButton/FavBtnFilled';
 import FavBtnOutline from '../FavButton/FavBtnOutline';
+import { useFetchDetails } from '../../hooks/useFetchDetails';
 // import imdbLogo from '../../resources/imdb-logo.svg';
 
 const MovieCard = ({ movie, favorites, removeFavorites, addFavorites }) => {
@@ -13,6 +14,8 @@ const MovieCard = ({ movie, favorites, removeFavorites, addFavorites }) => {
         if (favorites?.some((movie) => movie.imdbID === imdbID)) return true;
         else return false;
     };
+
+    const { movieDetails } = useFetchDetails(movie.imdbID);
 
     return (
         <div className="card">
@@ -32,16 +35,20 @@ const MovieCard = ({ movie, favorites, removeFavorites, addFavorites }) => {
 
             <Link to={`/movie/${movie.imdbID}`}>
                 <article className="card-wrapper">
-                    <div className="card__imdb-container">
-                        {/* <img src={imdbLogo} className='card__imdb-icon' alt='IMDB logo' /> */}
-                        {/* <p className='card__imdb-rating'>{movie.details.Ratings[0].Value}</p> */}
-                        {/* rating måste hämtas från  OMDB api*/}
-                    </div>
+                    {movieDetails && (
+                        <div className="card__imdb-container">
+                            <i className="fa-regular fa-star"></i>
+                            <p className="card__imdb-rating">
+                                {movieDetails.imdbRating}
+                            </p>
+                        </div>
+                    )}
+
                     <div className="card__image-container"></div>
                     <img
                         src={movie.Poster}
                         className="card__image"
-                        alt={movie.Title}
+                        alt={`Poster for ${movie.Title}`}
                         data-id={movie.imdbID}
                     />
                     <div className="card__title-container">
@@ -52,29 +59,5 @@ const MovieCard = ({ movie, favorites, removeFavorites, addFavorites }) => {
         </div>
     );
 };
-// const MovieCard = ({ movie }) => {
-//     return (
-//         <Link className="card" to={`/movie/${movie.imdbID}`}>
-//             <article className="card-wrapper">
-//                 <div className="card__imdb-container">
-//                     {/* <img src={imdbLogo} className='card__imdb-icon' alt='IMDB logo' /> */}
-//                     {/* <p className='card__imdb-rating'>{movie.details.Ratings[0].Value}</p> */}
-//                     {/* rating måste hämtas från  OMDB api*/}
-//                 </div>
-//                 <i className="fa-regular fa-star"></i>
-//                 <div className="card__image-container"></div>
-//                 <img
-//                     src={movie.Poster}
-//                     className="card__image"
-//                     alt={movie.Title}
-//                     data-id={movie.imdbID}
-//                 />
-//                 <div className="card__title-container">
-//                     <h3 className="card__title">{movie.Title}</h3>
-//                 </div>
-//             </article>
-//         </Link>
-//     );
-// };
 
 export default MovieCard;

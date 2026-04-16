@@ -8,23 +8,26 @@ import { useFetchTmdb } from '../../hooks/useFetchTmdb';
 
 const MoviePage = ({ favorites, addFavorites, removeFavorites }) => {
     const { id } = useParams();
-    const { movie, isLoading, isError } = useFetchDetails(id);
+    const { movieDetails, isLoading, isError } = useFetchDetails(id);
     const { tmdbDetails } = useFetchTmdb(id);
 
     useEffect(() => {
         console.log(tmdbDetails);
     }, [tmdbDetails]);
 
-    if (movie) {
+    if (isLoading) return <p>Loading...</p>;
+    if (isError) return <p>It shit itself...</p>;
+
+    if (movieDetails) {
         return (
             <section className="movie-page">
                 <MoviePageHero
-                    movie={movie}
+                    movie={movieDetails}
                     backdrop={tmdbDetails.backdrop_path}
                 />
                 <section className="page">
                     <MovieDetails
-                        movie={movie}
+                        movie={movieDetails}
                         favorites={favorites}
                         addFavorites={addFavorites}
                         removeFavorites={removeFavorites}
